@@ -14,6 +14,39 @@ async function rechercherAnime(nom) {
 
   const data = await response.json();
   console.log(data);
+  return data;
 }
 
 rechercherAnime("fullmetal");
+
+async function rechercherParId(id) {
+  const url = `https://anime-db.p.rapidapi.com/anime/by-id/${id}`;
+
+  const response = await fetch(url, {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Key": API_KEY,
+      "X-RapidAPI-Host": API_HOST
+    }
+  });
+
+  const data = await response.json();
+  console.log(data);
+  return data;
+}
+
+async function rechercherParClassement(rang) {
+  const url = `https://anime-db.p.rapidapi.com/anime/by-ranking/${rang}`;
+
+  const response = await fetch(url, {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Key": API_KEY,
+      "X-RapidAPI-Host": API_HOST
+    }
+  });
+
+  const data = await response.json();
+  console.log(data);
+  return data;
+}
