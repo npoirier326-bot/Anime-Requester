@@ -23,6 +23,7 @@ async function rechercherAnime(nom) {
   console.error("Erreur rechercherAnime :", error.message);
   return null;
 }
+}
 
 async function rechercherParId(id) {
   const url = `https://anime-db.p.rapidapi.com/anime/by-id/${id}`;
@@ -74,5 +75,4 @@ async function rechercherParClassement(rang) {
     console.error("Erreur rechercherParClassement :", error.message);
     return null;
   }
-}
 }
